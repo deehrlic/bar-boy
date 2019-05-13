@@ -3,7 +3,7 @@ import os
 import RPi.GPIO as GPIO
 import time
 
-GPIO.setmode(GPIO.BCM)
+GPIO.setmode(GPIO.BOARD)
 GPIO.setwarnings(False)
 
 class Drink:
@@ -33,5 +33,13 @@ class Drink:
 #HOW LONG AN OUNCE TAKES TO POUR
 OUNCE = 0.0
 
+#COSMOPOLITAN
 cosmo = new Drink([(36,OUNCE), (29,3*OUNCE), (37,2*OUNCE), (32,OUNCE)])
+#DAQUIRI
 daq = new Drink([(31,2*OUNCE), (32,1.25*OUNCE), (35,OUNCE)])
+#LEMON DROP
+drop = new Drink([(29,OUNCE), (36,.75*OUNCE), (33,.5*OUNCE)])
+#MARGARITA
+marg = new Drink([(38,1.75*OUNCE), (36,OUNCE), (32,.75*OUNCE)])
+#LONG ISLAND ICE TEA
+liit = new Drink([(38,.5*OUNCE), (29,.5*OUNCE), (31,.5*OUNCE), (36,.5*OUNCE), (40,.5*OUNCE), (33,OUNCE), (35,OUNCE)])
