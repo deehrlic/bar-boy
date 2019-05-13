@@ -43,3 +43,11 @@ drop = new Drink([(29,OUNCE), (36,.75*OUNCE), (33,.5*OUNCE)])
 marg = new Drink([(38,1.75*OUNCE), (36,OUNCE), (32,.75*OUNCE)])
 #LONG ISLAND ICE TEA
 liit = new Drink([(38,.5*OUNCE), (29,.5*OUNCE), (31,.5*OUNCE), (36,.5*OUNCE), (40,.5*OUNCE), (33,OUNCE), (35,OUNCE)])
+#RUM AND COKE
+#rumcoke = new Drink([(31,)])
+#GIN TONIC
+#gintonic = new Drink([(40,)])
+#BEAKER
+beaker = new Drink([(29,4*OUNCE)])
+
+print sys.argv
