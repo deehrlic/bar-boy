@@ -1,8 +1,10 @@
 import sys
 import os
+#uncomment below when pi testing
 #import RPi.GPIO as GPIO
 import time
 
+#uncomment below when pi testing
 #GPIO.setmode(GPIO.BOARD)
 #GPIO.setwarnings(False)
 
@@ -14,11 +16,13 @@ class Drink:
         for value in self.values:
             print(value[0])
             print(value[1])
+            #uncomment below when pi testing
         #    GPIO.setup(value[0])
         #    GPIO.output(value[0],GPIO.HIGH)
         #    time.sleep(value[1])
         #    GPIO.output(value[0],GPIO.LOW)
 
+#leave below commented
 #Pin Numbers:
 #Vodka           29
 #(Light) Rum     31
