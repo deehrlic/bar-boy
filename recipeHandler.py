@@ -11,30 +11,13 @@ print(list)
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
-<<<<<<< HEAD
-GPIO.setup(18,GPIO.OUT)
-GPIO.setup(31,GPIO.OUT)
-GPIO.setup(32,GPIO.OUT)
-GPIO.setup(33,GPIO.OUT)
-GPIO.setup(35,GPIO.OUT)
-GPIO.setup(36,GPIO.OUT)
-GPIO.setup(37,GPIO.OUT)
-GPIO.setup(38,GPIO.OUT)
-GPIO.setup(39,GPIO.OUT)
-GPIO.setup(40,GPIO.OUT)
-
-GPIO.output(18,GPIO.HIGH)
-time.sleep(list[0])
-print(list[0])
-GPIO.output(18,GPIO.LOW)
-=======
 
 GPIO.setup(37,GPIO.OUT)
 GPIO.output(37,GPIO.HIGH)
 time.sleep(list[0])
 GPIO.output(37,GPIO.LOW)
->>>>>>> 95b4ed91849244c83ffa8dc94e76b08d19f1b015
 
+GPIO.setup(31,GPIO.OUT)
 GPIO.setup(31,GPIO.OUT)
 GPIO.output(31,GPIO.HIGH)
 time.sleep(list[1])
@@ -75,10 +58,7 @@ GPIO.output(39,GPIO.HIGH)
 time.sleep(list[8])
 GPIO.output(39,GPIO.LOW)
 
-<<<<<<< HEAD
-=======
 GPIO.setup(40,GPIO.OUT)
 GPIO.output(40,GPIO.HIGH)
 time.sleep(list[9])
 GPIO.output(40,GPIO.LOW)
->>>>>>> 95b4ed91849244c83ffa8dc94e76b08d19f1b015
