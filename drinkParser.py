@@ -44,17 +44,17 @@ marg = Drink([(38,1.75*OUNCE), (36,OUNCE), (32,.75*OUNCE)])
 #LONG ISLAND ICE TEA
 liit = Drink([(38,.5*OUNCE), (29,.5*OUNCE), (31,.5*OUNCE), (36,.5*OUNCE), (40,.5*OUNCE), (33,OUNCE), (35,OUNCE)])
 #RUM AND COKE
-#rumcoke = Drink([(31,)])
+rumcoke = Drink([(31,OUNCE)])
 #GIN TONIC
-#gintonic = Drink([(40,)])
+gintonic = Drink([(40,OUNCE)])
 #BEAKER
 beaker = Drink([(29,4*OUNCE)])
 
-recipes = [cosmo, daq, drop, marg, liit, beaker]
-names = ["cosmo", "daq", "drop", "marg", "liit", "beaker"]
+recipes = [cosmo, daq, drop, marg, liit, beaker, rumcoke, gintonic]
+names = ["cosmo", "daq", "drop", "marg", "liit", "beaker", "rumcoke", "gintonic"]
 
 print(sys.argv[1])
 y = len(recipes)
 for x in range(0, y):
-    if names[x] == sys.argv[1]:
+    if names[x] == sys.argv[1]
         recipes[x].pour()
