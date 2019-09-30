@@ -9,13 +9,13 @@ with open('tester.csv', 'r', newline='') as csv_file:
 
 print(list)
 
-GPIO.setmode(GPIO.BCM)
+GPIO.setmode(GPIO.BOARD)
 GPIO.setwarnings(False)
 
-GPIO.setup(37,GPIO.OUT)
-GPIO.output(37,GPIO.HIGH)
+GPIO.setup(29,GPIO.OUT)
+GPIO.output(29,GPIO.HIGH)
 time.sleep(list[0])
-GPIO.output(37,GPIO.LOW)
+GPIO.output(29,GPIO.LOW)
 
 GPIO.setup(31,GPIO.OUT)
 GPIO.setup(31,GPIO.OUT)
