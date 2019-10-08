@@ -12,6 +12,7 @@ app.get('/pour', function(req, res) {
 });
 
 app.post('/get-drunk', (req, res) => {
+	res.sendFile(__dirname + "/" + "enjoy.html");
   const name = req.body.drinks
   console.log(name)
 
