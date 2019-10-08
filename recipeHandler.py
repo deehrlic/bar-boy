@@ -1,5 +1,5 @@
 #import RPi.GPIO as GPIO
-import time, sys, csv, os
+import time, sys, csv, os, random
 
 #################
 #Ounce constant, the amount of time in seconds it takes to pour 1oz (30ml)
@@ -15,12 +15,14 @@ if any(fname == full for fname in os.listdir('./recipes')):
         for list in my_list:
             for i in list:
                 if "OUNCE" in i:
-                    list[list.index(i)] = OUNCE * float(i[:3])
+                    list[list.index(i)] = round(OUNCE * float(i[:3]), 2)
+                elif "RANDOM" in i:
+                    list[list.index(i)] = round(random.random() * 5, 2)
                 else:
                     list[list.index(i)] = int(i)
             print(list)
 else:
-    raise Exception("Invalid Argument - recipe does not exist")
+    raise Exception('Recipe does not exist: {}'.format(full))
 
 
 
