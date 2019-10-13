@@ -1,10 +1,21 @@
 #import RPi.GPIO as GPIO
 import time, sys, csv, os, random
 
+#GPIO.setmode(GPIO.BOARD)
+#GPIO.setwarnings(False)
+
 #################
 #Ounce constant, the amount of time in seconds it takes to pour 1oz (30ml)
 OUNCE = 3
 #################
+
+def pour(pin, value):
+    print(pin, value)
+    print("\n")
+    #GPIO.setup(pin,GPIO.OUT)
+    #GPIO.output(pin,GPIO.HIGH)
+    #time.sleep(value)
+    #GPIO.output(pin,GPIO.LOW)
 
 #check if passed matches a file in recipe dir, and converts input to list of ints
 full = sys.argv[1] + ".csv"
@@ -20,10 +31,13 @@ if any(fname == full for fname in os.listdir('./recipes')):
                     list[list.index(i)] = round(random.random() * 5, 2)
                 else:
                     list[list.index(i)] = int(i)
-            print(list)
+        pins = my_list[0]
+        values = my_list[1]
+        print(pins, values)
+        for pin in pins:
+            pour(pin, values[pins.index(pin)])
 else:
     raise Exception('Recipe does not exist: {}'.format(full))
-
 
 
 
