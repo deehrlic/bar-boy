@@ -1,5 +1,6 @@
 #import RPi.GPIO as GPIO
 import time, sys, csv, os, random
+from threading import Thread
 
 #GPIO.setmode(GPIO.BOARD)
 #GPIO.setwarnings(False)
@@ -16,6 +17,8 @@ def pour(pin, value):
     #GPIO.output(pin,GPIO.HIGH)
     #time.sleep(value)
     #GPIO.output(pin,GPIO.LOW)
+
+threads = []
 
 #check if passed matches a file in recipe dir, and converts input to list of ints
 full = sys.argv[1] + ".csv"
@@ -35,7 +38,13 @@ if any(fname == full for fname in os.listdir('./recipes')):
         values = my_list[1]
         print(pins, values)
         for pin in pins:
-            pour(pin, values[pins.index(pin)])
+            t = Thread(target=pour, args=(pin,values[pins.index(pin)]))
+            threads.append(t)
+            t.start()
+        for t in threads:
+                t.join()
+                print(threads.index(t)," has stopped")
+
 else:
     raise Exception('Recipe does not exist: {}'.format(full))
 
@@ -52,59 +61,3 @@ else:
 #Cranberry       37
 #Tequila         38
 #Gin             40
-
-
-###
-#GPIO.setmode(GPIO.BOARD)
-#GPIO.setwarnings(False)
-
-#GPIO.setup(29,GPIO.OUT)
-#GPIO.output(29,GPIO.HIGH)
-#time.sleep(list[0])
-#GPIO.output(29,GPIO.LOW)
-
-#GPIO.setup(31,GPIO.OUT)
-#GPIO.setup(31,GPIO.OUT)
-#GPIO.output(31,GPIO.HIGH)
-#time.sleep(list[1])
-#GPIO.output(31,GPIO.LOW)
-
-#GPIO.setup(32,GPIO.OUT)
-#GPIO.output(32,GPIO.HIGH)
-#time.sleep(list[2])
-#GPIO.output(32,GPIO.LOW)
-
-#GPIO.setup(33,GPIO.OUT)
-#GPIO.output(33,GPIO.HIGH)
-#time.sleep(list[3])
-#GPIO.output(33,GPIO.LOW)
-
-#GPIO.setup(35,GPIO.OUT)
-#GPIO.output(35,GPIO.HIGH)
-#time.sleep(list[4])
-#GPIO.output(35,GPIO.LOW)
-
-#GPIO.setup(36,GPIO.OUT)
-#GPIO.output(36,GPIO.HIGH)
-#time.sleep(list[5])
-#GPIO.output(36,GPIO.LOW)
-
-#GPIO.setup(37,GPIO.OUT)
-#GPIO.output(37,GPIO.HIGH)
-#time.sleep(list[6])
-#GPIO.output(37,GPIO.LOW)
-
-#GPIO.setup(38,GPIO.OUT)
-#GPIO.output(38,GPIO.HIGH)
-#time.sleep(list[7])
-#GPIO.output(38,GPIO.LOW)
-
-#GPIO.setup(39,GPIO.OUT)
-#GPIO.output(39,GPIO.HIGH)
-#time.sleep(list[8])
-#GPIO.output(39,GPIO.LOW)
-
-#GPIO.setup(40,GPIO.OUT)
-#GPIO.output(40,GPIO.HIGH)
-#time.sleep(list[9])
-#GPIO.output(40,GPIO.LOW)
