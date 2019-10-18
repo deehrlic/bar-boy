@@ -6,11 +6,12 @@
 body {background-color: powderblue;}
 input{font-size: 300%; display: block;
     margin-left: auto;
-    margin-right: auto}
+    margin-right: auto; margin-top: 50px;}
 h1{font-family: "Courier New";
   font-size: 700%; text-align: center}
 h2{font-family: "Courier New"; text-align: center; color:grey}
 h3{font-family: "Courier New"; text-align: center; color:grey}
+select{width: 150px; display: block; height: 200px; width: 800px; margin: 0 auto; font-size: 500%; text-align:center}
 </style>
 </head>
 
@@ -19,14 +20,13 @@ h3{font-family: "Courier New"; text-align: center; color:grey}
 <h1> bar-boy </h1>
 
 
-<form method="post" action="/get-drunk">
-  <input type = "text" list = "drinks" name="drinks">
-      <datalist id = "drinks">
+<form method="POST" action="/get-drunk">
+  <select name = "drinks">
         <option value="cosmo">cosmo</option>
         <option value="daquiri">daquiri</option>
         <option value="tester">tester</option>
         <option value="random">random</option>
-      </datalist>
+  </select>
   <input type="submit">
 
 </form>

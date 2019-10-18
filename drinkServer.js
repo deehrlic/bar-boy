@@ -17,6 +17,10 @@ app.get('/shot', function(req, res) {
 	res.sendFile(__dirname + "/" + "shots.html");
 });
 
+app.get('/', function(req, res) {
+	res.redirect('/pour')
+});
+
 app.get('/drunk-splash', function(req, res) {
 	console.log("pouring")
 
