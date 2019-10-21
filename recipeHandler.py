@@ -43,7 +43,7 @@ if any(fname == full for fname in os.listdir('./recipes')):
             t.start()
         for t in threads:
                 t.join()
-                print(threads.index(t)," has stopped")
+                
 
 else:
     raise Exception('Recipe does not exist: {}'.format(full))
