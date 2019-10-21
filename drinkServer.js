@@ -61,7 +61,6 @@ app.post('/mystery-shot', (req, res) => {
  		PythonShell.run('recipeHandler.py', options, function (err, results) {
     if (err) throw err;
     // results is an array consisting of messages collected during execution
-    console.log(results);
   });
 
 res.end()
