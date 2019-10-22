@@ -1,9 +1,9 @@
-#import RPi.GPIO as GPIO
+import RPi.GPIO as GPIO
 import time, sys, csv, os, random
 from threading import Thread
 
-#GPIO.setmode(GPIO.BOARD)
-#GPIO.setwarnings(False)
+GPIO.setmode(GPIO.BOARD)
+GPIO.setwarnings(False)
 
 #################
 #Ounce constant, the amount of time in seconds it takes to pour 1oz (30ml)
@@ -13,10 +13,10 @@ OUNCE = 3
 def pour(pin, value):
     print(pin, value)
     print("\n")
-    #GPIO.setup(pin,GPIO.OUT)
-    #GPIO.output(pin,GPIO.HIGH)
-    #time.sleep(value)
-    #GPIO.output(pin,GPIO.LOW)
+    GPIO.setup(pin,GPIO.OUT)
+    GPIO.output(pin,GPIO.HIGH)
+    time.sleep(value)
+    GPIO.output(pin,GPIO.LOW)
 
 threads = []
 
