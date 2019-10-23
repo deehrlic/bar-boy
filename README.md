@@ -30,32 +30,31 @@ If you want to recreate the system we've designed, you'll want to read the full 
 -some kind of shell that can run bash scripts
 
 Make sure you have all of these packages installed.
-
--request
+**request**
 ```
 npm i request
 ```
--pythonShell
+**pythonShell**
 ```
 npm i python-shell
 ```
--express
+**express**
 ```
 npm i express
 ```
--ngrok
+**ngrok**
 ```
 npm i ngrok
 ```
--RPi.GPIO
+**RPi.GPIO**
 ```
 pip3 install RPi.GPIO
 ```
--RPLCD
+**RPLCD**
 ```
 pip3 install RPLCD
 ```
--bitly_api
+**bitly_api**
 ```
 Go to https://www.geeksforgeeks.org/python-how-to-shorten-long-urls-using-bitly-api/ and follow the tutorial
 ```
