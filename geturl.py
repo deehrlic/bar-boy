@@ -9,7 +9,7 @@ dat = " ".join(data)
 
 found = re.findall(pat, dat)
 
-print(found)
+
 result = found[0][13:]
 
 
@@ -17,4 +17,4 @@ apiurl = "http://tinyurl.com/api-create.php?url="
 tinyurl = urllib.request.urlopen(apiurl + result).read()
 dec = tinyurl.decode("utf-8")
 
-print(dec)
+return dec
