@@ -17,4 +17,5 @@ apiurl = "http://tinyurl.com/api-create.php?url="
 tinyurl = urllib.request.urlopen(apiurl + result).read()
 dec = tinyurl.decode("utf-8")
 
-return dec
+def getDec():
+    return dec
