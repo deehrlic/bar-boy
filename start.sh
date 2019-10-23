@@ -1,5 +1,6 @@
 #!/bin/bash
 
+killall -9 ngrok
 killall -9 node
 
 
