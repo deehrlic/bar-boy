@@ -1,4 +1,4 @@
-import re
+import re, os, urllib.request
 
 with open ("url.py", "r") as myfile:
     data=myfile.readlines()
@@ -9,6 +9,12 @@ dat = " ".join(data)
 
 found = re.findall(pat, dat)
 
+print(found)
 result = found[0][13:]
 
-print(result)
+
+apiurl = "http://tinyurl.com/api-create.php?url="
+tinyurl = urllib.request.urlopen(apiurl + result).read()
+dec = tinyurl.decode("utf-8")
+
+print(dec)
