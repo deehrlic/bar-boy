@@ -1,6 +1,6 @@
 from RPLCD import i2c
 from time import *
-import subprocess, os
+import subprocess, os, geturl
 
 lcdmode = 'i2c'
 cols = 16
@@ -17,7 +17,7 @@ lcd = i2c.CharLCD(i2c_expander, address, port=port, charmap=charmap,cols=cols,ro
 lcd.backlight_enabled = True
 
 lcd.write_string(subprocess.run(['hostname', '-I'],stdout = subprocess.PIPE).stdout.decode('utf-8')[:10])
-lcd.write_string(os.system("python3 geturl.py"))
+lcd.write_string(geturl.getDec())
 
 sleep(5)
 
