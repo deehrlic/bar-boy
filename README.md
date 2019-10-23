@@ -14,6 +14,8 @@ Webpages:
 
 **<your_shortened_link>/shot** : bar-boy's more **EXTREME** mode. Allows you to order a drink containing a variable amount of shots. Use at your own risk.
 
+**<your_shortened_link>/admin** : Allows bar-boy's user to manipulate valves individually to pour custom creations.
+
 **Create your own recipes!** : Since bar-boy can dispense any kind of fluids, you can create your own recipes. Consult the /recipes folder to see examples of the format we use with our .csv recipes and update select.html accordingly to add your new recipe(s) to the option menu on the /pour page.
 
 
