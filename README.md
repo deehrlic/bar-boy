@@ -70,7 +70,9 @@ Once you have the frame constructed and electronics hooked up, clone this repo a
 ```
 bash start.sh
 ```
-You should see an ngrok tunnel listening on port 3000 start followed by a Node.js server followed by the LCD display showing the device's IP on line 1 and a bit.ly shortened version of the ngrok link. When you shut it down after you're doing you may encounter a 
+Then navigate to **<your shortened link>** and start pouring!
+
+After running the bash command, you should see an ngrok tunnel listening on port 3000 start followed by a Node.js server followed by the LCD display showing the device's IP on line 1 and a bit.ly shortened version of the ngrok link. When you shut it down after you're doing you may encounter a 
 ```
 panic: runtime error: slice bounds out of range
 ```
