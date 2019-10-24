@@ -45,6 +45,31 @@ app.post('/get-drunk', (req, res) => {
   res.end()
 })
 
+app.get('/admin', function(req, res) {
+	console.log("admin")
+
+	res.sendFile(__dirname + "/" + "admin.html");
+});
+
+app.post('/admin', (req, res) => {
+
+	res.redirect('/admin');
+
+  const name = req.body.drinks
+  console.log(name)
+
+	let options = {
+    args: [name]
+  };
+
+  PythonShell.run('recipeHandler.py', options, function (err, results) {
+    if (err) throw err;
+    // results is an array consisting of messages collected during execution
+  });
+
+  res.end()
+})
+
 app.get('/mystery-splash', function(req, res) {
 	console.log("mysteryshot");
 	res.sendFile(__dirname + "/" + "mysteryshot.html");
