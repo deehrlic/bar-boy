@@ -17,9 +17,10 @@ lcd = i2c.CharLCD(i2c_expander, address, port=port, charmap=charmap,cols=cols,ro
 lcd.backlight_enabled = True
 
 lcd.write_string(subprocess.run(['hostname', '-I'],stdout = subprocess.PIPE).stdout.decode('utf-8')[:10])
+lcd.write_string("      ")
 lcd.write_string(geturl.getDec())
 
-sleep(5)
+#sleep(5)
 
-lcd.backlight_enabled = False
-lcd.close(clear=True)
+#lcd.backlight_enabled = False
+#lcd.close(clear=True)

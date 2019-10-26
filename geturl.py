@@ -26,7 +26,7 @@ b = bitly_api.Connection(API_USER, API_KEY)
 longurl = result
 response = b.shorten(uri = longurl)
 
-dec = response['url']
+dec = response['url'][7:]
 
 def getDec():
     return dec
