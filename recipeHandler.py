@@ -2,6 +2,12 @@ import RPi.GPIO as GPIO
 import time, sys, csv, os, random
 from threading import Thread
 
+#ADD DISTANCE HERE 
+#IF DIST GOOD KEEP GO
+#ELSE AFTER 5sec EXIT
+
+
+
 GPIO.setmode(GPIO.BOARD)
 GPIO.setwarnings(False)
 
