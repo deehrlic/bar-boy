@@ -13,7 +13,7 @@ GPIO.setwarnings(False)
 
 #################
 #Ounce constant, the amount of time in seconds it takes to pour 1oz (30ml)
-OUNCE = 3
+OUNCE = 5
 #################
 
 def pour(pin, value):
