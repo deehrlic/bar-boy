@@ -20,6 +20,7 @@ def pour(pin, value):
     print(pin, value)
     print("\n")
     GPIO.setup(pin,GPIO.OUT)
+    GPIO.output(pin, GPIO.LOW)
     GPIO.output(pin,GPIO.HIGH)
     time.sleep(value)
     GPIO.output(pin,GPIO.LOW)
