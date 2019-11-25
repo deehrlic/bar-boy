@@ -50,6 +50,20 @@ def distance(trig,echo):
     distance = (TimeElapsed * 34300) / 2
     
     return distance
+    
+def checkDistance(GPIO_TRIGGER, GPIO_ECHO, GPIO_TRIGGER1, GPIO_ECHO1):
+    d = distance(GPIO_TRIGGER, GPIO_ECHO)
+    d1 = distance(GPIO_TRIGGER1, GPIO_ECHO1)
+          
+    print ("Measured Distance = %.1f cm" % d)
+    print ("Measured Distance 1 = %.1f cm" % d1)
+    #print ("Measured Distance 1 = %.1f cm" % dist1)
+    if 26.0 < d < 33.0 and 23.0 < d1 < 29.0:
+        print("in range")
+        return True
+    else:
+        print("OUT OF RANGE")
+        return False
  
 if __name__ == '__main__':
     try:
