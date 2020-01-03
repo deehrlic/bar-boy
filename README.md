@@ -1,4 +1,4 @@
-![Final Build](https://github.com/deehrlic/bar-boy/blob/master/BarBoyPortrait.JPG)
+![The Final Build](https://imgur.com/a/IE8JVIb)
 
 # bar-boy
 
