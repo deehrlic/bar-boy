@@ -1,3 +1,5 @@
+![Final Build](https://github.com/deehrlic/bar-boy/blob/master/BarBoyPortrait.JPG)
+
 # bar-boy
 
 This repository contains the source code for a remote controlled drink machine that was built by a friend and I. It consists mainly of a circuit of solenoid valves being controlled by a Raspberry Pi with added functionality with an LCD screen, a pair of distance sensors, and a LED puck light. 
