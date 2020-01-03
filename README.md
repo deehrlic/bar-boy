@@ -1,4 +1,4 @@
-![The Final Build](https://imgur.com/a/IE8JVIb)
+[The Final Build](https://imgur.com/a/IE8JVIb)
 
 # bar-boy
 
