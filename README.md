@@ -1,10 +1,10 @@
-[Link to Picture of Final Build](https://imgur.com/a/IE8JVIb)
-
 # bar-boy
 
 This repository contains the source code for a remote controlled drink machine that was built by a friend and I. It consists mainly of a circuit of solenoid valves being controlled by a Raspberry Pi with added functionality with an LCD screen, a pair of distance sensors, and a LED puck light. 
 
 The main code running this system is a Node.js webserver connected to a HTTP tunnel that calls a multithreaded python3 scripts to triggers various valves and pour fluids into containers. In addition there are a handful of utility scripts that use a link shortener and a LCD screen to display the IP address of the Pi for easier remote SSH access and a shortened version of the tunnel link for convenience.
+
+**[Link to Picture of Final Build!](https://imgur.com/a/IE8JVIb)**
 
 ## Using bar-boy
 
