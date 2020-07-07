@@ -1,7 +1,7 @@
 import RPi.GPIO as GPIO
 import time, sys, csv, os, random
 from threading import Thread
-import distance
+import distance, sys
 
 #ADD DISTANCE HERE 
 #IF DIST GOOD KEEP GO
@@ -44,50 +44,52 @@ GPIO_ECHO1 = 15
 GPIO.setup(GPIO_TRIGGER1, GPIO.OUT)
 GPIO.setup(GPIO_ECHO1, GPIO.IN)
 
-if distance.checkDistance(GPIO_TRIGGER, GPIO_ECHO, GPIO_TRIGGER1, GPIO_ECHO1) == True:
+#if distance.checkDistance(GPIO_TRIGGER, GPIO_ECHO, GPIO_TRIGGER1, GPIO_ECHO1) == True:
     
-    if sys.argv[1] in ["hurricane", "lagoon", "mistake", "glue", "cleaner"]:
-        print(sys.argv[1])
-        d0 = str(sys.argv[1]) + "0"
-        d1 = str(sys.argv[1]) + "1"
-        cmd0 = 'python3 recipeHandler.py ' + d0
-        cmd1 = 'python3 recipeHandler.py ' + d1
-        os.system(cmd0)
-        os.system(cmd1)
-        if sys.argv[1] in ["mistake", "cleaner", "hurricane"]:
-            d2 = str(sys.argv[1]) + "2"
-            cmd2 = 'python3 recipeHandler.py ' + d2
-            os.system(cmd2)
+if sys.argv[1] in ["hurricane", "lagoon", "mistake", "glue", "cleaner"]:
+    print(sys.argv[1])
+    d0 = str(sys.argv[1]) + "0"
+    d1 = str(sys.argv[1]) + "1"
+    cmd0 = 'python3 recipeHandler.py ' + d0
+    cmd1 = 'python3 recipeHandler.py ' + d1
+    os.system(cmd0)
+    os.system(cmd1)
+    if sys.argv[1] in ["mistake", "cleaner", "hurricane"]:
+        d2 = str(sys.argv[1]) + "2"
+        cmd2 = 'python3 recipeHandler.py ' + d2
+        os.system(cmd2)
         
     
-    #check if passed matches a file in recipe dir, and converts input to list of ints
-    full = sys.argv[1] + ".csv"
-    if any(fname == full for fname in os.listdir('./recipes')):
-        print(full)
-        with open('recipes/' + sys.argv[1] + '.csv', 'r', newline='') as csv_file:
-            reader = csv.reader(line.replace('  ', ',') for line in csv_file)
-            my_list = list(reader)
-            for list in my_list:
-                for i in list:
-                    if "OUNCE" in i:
-                        list[list.index(i)] = round(OUNCE * float(i[:3]), 2)
-                    elif "RANDOM" in i:
-                        list[list.index(i)] = round(random.random() * 5, 2)
-                    else:
-                        list[list.index(i)] = int(i)
-            pins = my_list[0]
-            values = my_list[1]
-            print(pins, values)
-            for pin in pins:
+ #check if passed matches a file in recipe dir, and converts input to list of ints
+full = sys.argv[1] + ".csv"
+if any(fname == full for fname in os.listdir('./recipes')):
+    print(full)
+    with open('recipes/' + sys.argv[1] + '.csv', 'r', newline='') as csv_file:
+        reader = csv.reader(line.replace('  ', ',') for line in csv_file)
+        my_list = list(reader)
+        for list in my_list:
+            for i in list:
+                if "OUNCE" in i:
+                     list[list.index(i)] = round(OUNCE * float(i[:3]), 2)
+                elif "RANDOM" in i:
+                    list[list.index(i)] = round(random.random() * 5, 2)
+                else:
+                    list[list.index(i)] = int(i)
+        pins = my_list[0]
+        values = my_list[1]
+        print(pins, values)
+        for pin in pins:
                 t = Thread(target=pour, args=(pin,values[pins.index(pin)]))
                 threads.append(t)
                 t.start()
-            for t in threads:
+        for t in threads:
                     t.join()
+        print("success")
                 
 
-    else:
-        print("recipe no exist")
+else:
+    print("recipe no exist")
+    sys.exit(-1)
 
 
 
