@@ -1,92 +1,41 @@
 # bar-boy
 
-This repository contains the source code for a remote controlled drink machine that was built by a friend and I. It consists mainly of a circuit of solenoid valves being controlled by a Raspberry Pi with added functionality with an LCD screen, a pair of distance sensors, and a LED puck light. 
+this repository contains the source code for a remote controlled drink machine that was built by deehrlic and cduval with a raspberry pi
 
-The main code running this system is a Node.js webserver connected to a HTTP tunnel that calls a multithreaded python3 scripts to triggers various valves and pour fluids into containers. In addition there are a handful of utility scripts that use a link shortener and a LCD screen to display the IP address of the Pi for easier remote SSH access and a shortened version of the tunnel link for convenience.
+bar-boy's backend has recently been upgraded and now runs on Python with a Flask server directing traffic and uses get requests to communicate between the server and client. This differs from previous builds and allows literally anything with an internet connection running on the same network an ability to easily interface with it since the server and client are no longer dependent on each other.
 
 **[Link to Picture of Final Build!](https://imgur.com/a/IE8JVIb)**
 
 ## Using bar-boy
 
-Once you have completed the setup as described below (Prerequisites, Installing, and Deployment) here's how you get the most out of bar-boy.
-
-Webpages:
-
-**<your_shortened_link>/pour** : bar-boy's default mode. On this page you can choose from a list of recipes (built-in or yours) and make it pour the drink of your choice.
-
-**<your_shortened_link>/shot** : bar-boy's more **EXTREME** mode. Allows you to order a drink containing a variable amount of shots. Use at your own risk.
-
-**<your_shortened_link>/admin** : Allows bar-boy's user to manipulate valves individually to pour custom creations.
-
-**Create your own recipes!** : Since bar-boy can dispense any kind of fluids, you can create your own recipes. Consult the /recipes folder to see examples of the format we use with our .csv recipes and update select.html accordingly to add your new recipe(s) to the option menu on the /pour page.
+Assuming you've recreated our hardware build, all you need to do is make sure all devices intended to connect to the bar-boy and run 
+```
+python3 api.py
+```
+on your Pi and 
+```
+python3 client.py
+```
+if you're using our included client. Since our setup is modeled off of an API, you can interface with bar-boy by sending a get request to 
+```
+http://pi's-ip-addr:port#/api/route?drink=drink-name
+```
+to trigger whatever drink you sent to pour. All service to the bar-boy itself is routed through the LOCAL IP address of the Pi running it so take note of that.
 
 
 ### Prerequisites
 
-If you want to recreate the system we've designed, you'll want to read the full electronics writeup (COMING SOON) and have the following on your Raspberry Pi:
+Python3 and these non built-in libraries:
+-flask
+-requests
+-csv
+-Rpi.GPIO
 
--Python3
--Node.js
--pip3
--npm
--some kind of shell that can run bash scripts
-
-Make sure you have all of these packages installed.
-**request**
-```
-npm i request
-```
-**pythonShell**
-```
-npm i python-shell
-```
-**express**
-```
-npm i express
-```
-**ngrok**
-```
-npm i ngrok
-```
-**RPi.GPIO**
-```
-pip3 install RPi.GPIO
-```
-**RPLCD**
-```
-pip3 install RPLCD
-```
-**bitly_api**
-```
-Go to https://www.geeksforgeeks.org/python-how-to-shorten-long-urls-using-bitly-api/ and follow the tutorial
-```
-
-### Installing
-
-To get this system up and runnning you'll want to first read the electronics guide (COMING SOON). Once you've done that, clone the repo and make sure you have all the prerequisites installed.
-
-
-## Deployment
-
-Once you have the frame constructed and electronics hooked up, clone this repo and navigate to the /bar-boy directory and run:
-```
-bash start.sh
-```
-Then navigate to **<your shortened link>** and start pouring!
-
-After running the bash command, you should see an ngrok tunnel listening on port 3000 start followed by a Node.js server followed by the LCD display showing the device's IP on line 1 and a bit.ly shortened version of the ngrok link. When you shut it down after you're doing you may encounter a 
-```
-panic: runtime error: slice bounds out of range
-```
-error. If this error appears, just close that terminal window and start a new one.
 
 ## Built With
 
-* Node.js
 * Python3
 * HTML/CSS
-* [Ngrok](ngrok.com)
-* [Bit.ly API](dev.bitly.com)
 
 ## Authors
 
