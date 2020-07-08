@@ -4,7 +4,7 @@ this repository contains the source code for a remote controlled drink machine t
 
 bar-boy's backend has recently been upgraded and now runs on Python with a Flask server directing traffic and uses get requests to communicate between the server and client. This differs from previous builds and allows literally anything with an internet connection running on the same network an ability to easily interface with it since the server and client are no longer dependent on each other.
 
-![portrait](https://raw.githubusercontent.com/deehrlic/bar-boy/master/BarBoyPortrait.JPG)
+**[portrait](https://raw.githubusercontent.com/deehrlic/bar-boy/master/BarBoyPortrait.JPG)**
 
 ## Using bar-boy
 
