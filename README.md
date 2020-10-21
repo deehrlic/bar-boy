@@ -6,7 +6,7 @@ bar-boy's backend has recently been upgraded and now runs on Python with a Flask
 
 **[IMAGE HERE](https://raw.githubusercontent.com/deehrlic/bar-boy/master/BarBoyPortrait.JPG)**
 
-**SEE BARBOI.pdf IN THIS DIRECTORY FOR A TECHNICAL WRITEUP**
+**SEE /BARBOI.PDF IN THIS DIRECTORY FOR A TECHNICAL WRITEUP**
 
 ## Using bar-boy
 
