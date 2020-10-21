@@ -6,6 +6,8 @@ bar-boy's backend has recently been upgraded and now runs on Python with a Flask
 
 **[IMAGE HERE](https://raw.githubusercontent.com/deehrlic/bar-boy/master/BarBoyPortrait.JPG)**
 
+**SEE BARBOI.pdf IN THIS DIRECTORY FOR A TECHNICAL WRITEUP**
+
 ## Using bar-boy
 
 Assuming you've recreated our hardware build, all you need to do is make sure all devices intended to connect to the bar-boy and run 
