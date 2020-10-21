@@ -28,10 +28,15 @@ to trigger whatever drink you sent to pour. All service to the bar-boy itself is
 ### Prerequisites
 
 Python3 and these non built-in libraries:
+
 -flask
+
 -requests
+
 -csv
+
 -Rpi.GPIO
+
 
 
 ## Built With
